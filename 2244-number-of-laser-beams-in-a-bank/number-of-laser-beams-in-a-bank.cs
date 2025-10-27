@@ -4,7 +4,7 @@ public class Solution {
         foreach(string row in bank)
         {
             int count = row.Count(c=>c=='1');
-            if(count != 0)
+            if(count > 0)
             {
                 total += prev * count;
                 prev = count;
