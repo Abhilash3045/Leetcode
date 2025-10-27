@@ -3,7 +3,11 @@ public class Solution {
         int prev = 0, total = 0;
         foreach(string row in bank)
         {
-            int count = row.Count(c=>c=='1');
+            int count = 0;
+            foreach(char cell in row)
+            {
+                count += cell & 1;
+            }
             if(count > 0)
             {
                 total += prev * count;
