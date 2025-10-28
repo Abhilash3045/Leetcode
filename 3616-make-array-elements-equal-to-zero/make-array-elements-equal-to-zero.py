@@ -2,7 +2,7 @@ class Solution:
     def countValidSelections(self, nums: List[int]) -> int:
         t=sum(nums)
         p, a = 0, 0
-        for i,x in enumerate(nums):
+        for x in nums:
             s=t-p-x
             if x==0:
                 if p==s:
