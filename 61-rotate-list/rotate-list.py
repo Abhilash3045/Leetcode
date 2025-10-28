@@ -13,14 +13,13 @@ class Solution:
         while temp.next:
             temp=temp.next
             length+=1
-        temp.next=head      # made it as a circular linked list and we break it at end
         k%=length
         if k==0:
-            temp.next=None
             return head
         new_last=head
         for _ in range(length-k-1):
             new_last=new_last.next
         new_head=new_last.next
         new_last.next=None
+        temp.next=head
         return new_head
