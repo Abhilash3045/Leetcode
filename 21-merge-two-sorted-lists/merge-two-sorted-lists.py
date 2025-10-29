@@ -10,23 +10,6 @@ class Solution(object):
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        # combo=[]
-        # curr=list1
-        # while curr:
-        #     combo.append(curr.val)
-        #     curr=curr.next
-        # curr=list2
-        # while curr:
-        #     combo.append(curr.val)
-        #     curr=curr.next
-        # combo.sort()
-        # dummy=ListNode(0)
-        # curr=dummy
-        # for i in combo:
-        #     curr.next=ListNode(i)
-        #     curr=curr.next
-        # return dummy.next
-        
         dummy=ListNode()
         curr=dummy
         while list1 and list2:
