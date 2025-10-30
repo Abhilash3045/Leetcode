@@ -1,11 +1,10 @@
 public class Solution {
     public int MinNumberOperations(int[] target) {
-        int result=0, previous=0;
-        foreach(int i in target){
-            if(i>previous){
-                result+=i-previous;
+        int result=target[0];
+        for(int i=1; i<target.Length; i++){
+            if(target[i]>target[i-1]){
+                result+=target[i]-target[i-1];
             }
-            previous=i;
         }
         return result;
     }
