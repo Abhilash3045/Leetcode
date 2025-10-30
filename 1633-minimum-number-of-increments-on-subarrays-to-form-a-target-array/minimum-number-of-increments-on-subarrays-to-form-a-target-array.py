@@ -1,8 +1,11 @@
-class Solution:
-    def minNumberOperations(self, target: List[int]) -> int:
-        ans,previous=0,0
-        for i in target:
-            if i>previous:
-                ans+=i-previous
-            previous=i
-        return ans
+class Solution(object):
+    def minNumberOperations(self, target):
+        """
+        :type target: List[int]
+        :rtype: int
+        """
+        r=target[0]
+        for i in range(1,len(target)):
+            if target[i]>target[i-1]:
+                r+=target[i]-target[i-1]
+        return r
