@@ -1,8 +1,17 @@
-class Solution:
-    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
-        a="abcdefghijklmnopqrstuvwxyz"
-        m=a.index(target)
-        for i in letters:
-            if a.index(i)>m:
-                return i
-        return letters[0]
+class Solution(object):
+    def nextGreatestLetter(self, letters, target):
+        """
+        :type letters: List[str]
+        :type target: str
+        :rtype: str
+        """
+        left,right=0,len(letters)-1
+        res=""
+        while left<=right:
+            mid=(left+right)//2
+            if ord(letters[mid])>ord(target):
+                res=letters[mid]
+                right=mid-1
+            else:
+                left=mid+1
+        return res if res else letters[0]
