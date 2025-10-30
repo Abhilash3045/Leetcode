@@ -3,8 +3,7 @@ class Solution:
         i,j=0,len(height)-1
         cap=0
         while j>i:
-            m=j-i
-            cap=max(m*min(height[i],height[j]), cap)
+            cap=max((j-i)*min(height[i],height[j]), cap)
             if height[i]>height[j]:
                 j-=1
             else:
