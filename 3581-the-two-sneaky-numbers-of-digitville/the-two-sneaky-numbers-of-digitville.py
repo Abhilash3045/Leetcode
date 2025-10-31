@@ -1,8 +1,7 @@
 class Solution:
     def getSneakyNumbers(self, nums: List[int]) -> List[int]:
-        h,l={},[]
+        h=set()
         for i in nums:
-            h[i]=h.get(i,0)+1
-            if h[i]>1:
-                l.append(i)
-        return l
+            if nums.count(i)>1:
+                h.add(i)
+        return list(h)
