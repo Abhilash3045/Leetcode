@@ -1,10 +1,8 @@
 class Solution:
     def getSneakyNumbers(self, nums: List[int]) -> List[int]:
-        s=[]
-        l=[]
+        h,l={},[]
         for i in nums:
-            if i in s:
+            h[i]=h.get(i,0)+1
+            if h[i]>1:
                 l.append(i)
-            else:
-                s.append(i)
         return l
