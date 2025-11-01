@@ -6,8 +6,7 @@
 class Solution:
     def modifiedList(self, nums: List[int], head: Optional[ListNode]) -> Optional[ListNode]:
         nums=set(nums)
-        dummy=ListNode()
-        dummy.next=head
+        dummy=ListNode(0,head)
         temp=dummy
         while temp.next:
             if temp.next.val in nums:
