@@ -24,13 +24,13 @@ class MinStack(object):
         """
         :rtype: int
         """
-        return -1 if not self.s else self.s[-1]
+        return self.s[-1]
 
     def getMin(self):
         """
         :rtype: int
         """
-        return -1 if not self.st else self.st[-1]
+        return self.st[-1]
 
 
 # Your MinStack object will be instantiated and called as such:
