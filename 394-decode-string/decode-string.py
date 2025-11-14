@@ -1,23 +1,21 @@
-class Solution:
-    def decodeString(self, s: str) -> str:
-        self.i=0
-        return self.decode(s)
-    def decode(self, s: str) -> str:
-        res,num="",0
-        while self.i<len(s):
-            c=s[self.i]
-            if c.isdigit():
-                num=num*10+int(c)
-                self.i+=1
-            elif c=='[':
-                self.i+=1
-                inner=self.decode(s)
-                res+=inner*num
-                num=0
+class Solution(object):
+    def decodeString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        stack,cnum,cstr=[],0,''
+        for c in s:
+            if c=='[':
+                stack.append(cstr)
+                stack.append(cnum)
+                cstr,cnum='',0
             elif c==']':
-                self.i+=1
-                return res
+                num=stack.pop()
+                pstr=stack.pop()
+                cstr=pstr+num*cstr
+            elif c.isdigit():
+                cnum=cnum*10+int(c)
             else:
-                res+=c
-                self.i+=1
-        return res
+                cstr+=c
+        return cstr
