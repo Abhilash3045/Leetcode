@@ -1,8 +1,9 @@
 class Solution:
     def maxLengthBetweenEqualCharacters(self, s: str) -> int:
-        maxy=0
+        ans=-1;h={}
         for i in range(len(s)):
-            for j in range(i,len(s)):
-                if s[i]==s[j]:
-                    maxy=max(maxy,j-i)
-        return maxy-1
+            if s[i] in h.keys():
+                ans=max(ans, i-h[s[i]]-1)
+            else:
+                h[s[i]]=i
+        return ans
