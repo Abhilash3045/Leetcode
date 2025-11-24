@@ -1,12 +1,11 @@
-class Solution:
-    def prefixesDivBy5(self, nums: List[int]) -> List[bool]:
-        h=[]
-        temp=""
-        for i in nums:
-            temp+=str(i)
-            binary=int(temp,2)
-            if int(binary)%5==0:
-                h.append(True)
-            else:
-                h.append(False)
-        return h
+class Solution(object):
+    def prefixesDivBy5(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[bool]
+        """
+        res=[];rem=0
+        for num in nums:
+            rem=(rem*2+num)%5
+            res.append(rem==0)
+        return res
