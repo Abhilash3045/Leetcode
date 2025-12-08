@@ -1,11 +1,11 @@
 public class Solution {
     public char RepeatedCharacter(string s) {
-        List<int> res = new List<int>();
-        for(int i=0; i<s.Length; i++){
-            if(res.Contains(s[i]))
-                return s[i];
-            res.Add(s[i]);
+        HashSet<char> res = new HashSet<char>();
+        foreach(char i in s){
+            if(res.Contains(i))
+                return i;
+            res.Add(i);
         }
-        return 's';
+        return '\0';
     }
 }
