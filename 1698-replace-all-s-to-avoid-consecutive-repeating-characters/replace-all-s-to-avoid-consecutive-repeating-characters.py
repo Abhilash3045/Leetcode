@@ -1,6 +1,6 @@
 class Solution:
     def modifyString(self, s: str) -> str:
-        alp="abcdefghijklmnopqrstuvwxyz"
+        alp="abc"
         res=[]
         for i in range(len(s)):
             ind=0
