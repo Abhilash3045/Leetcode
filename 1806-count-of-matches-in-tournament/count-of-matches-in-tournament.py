@@ -6,6 +6,6 @@ class Solution:
                 c+=n//2
                 n//=2
             else:
-                c+=(n-1)//2
-                n=(n-1)//2+1
+                c+=n//2
+                n=n//2+1
         return c
