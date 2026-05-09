@@ -1,11 +1,11 @@
 class Solution:
     def separateDigits(self, nums: List[int]) -> List[int]:
-        n=[]
-        for i in range(len(nums)):
-            t=[]
-            while nums[i]>0:
-               l=nums[i]%10
-               t=[l]+t
-               nums[i]//=10
-            n+=t
-        return n
+        r=[]
+        for i in range(len(nums)-1,-1,-1):
+            n=nums[i]
+            while n:
+                d=n%10
+                n//=10
+                r.append(d)
+        r.reverse()
+        return r
