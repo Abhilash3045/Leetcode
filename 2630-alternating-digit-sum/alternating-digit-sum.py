@@ -6,5 +6,5 @@ class Solution:
             if i%2==0:
                 c+=int(n[i])
             else:
-                c+=int(n[i])*(-1)
+                c-=int(n[i])
         return c
