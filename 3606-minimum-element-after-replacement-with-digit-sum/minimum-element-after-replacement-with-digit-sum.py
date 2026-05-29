@@ -1,5 +1,10 @@
 class Solution:
     def minElement(self, nums: List[int]) -> int:
-        r=[sum(int(d) for d in str(num)) for num in nums]
+        r=[]
+        for num in nums:
+            ds=0
+            for d in str(num):
+                ds+=int(d)
+            r.append(ds)
         r.sort()
         return r[0]
