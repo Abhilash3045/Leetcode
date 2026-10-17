@@ -9,7 +9,7 @@ class Solution:
             arr.append((total, n, i))
         arr.sort()
         swaps=0
-        for i in range(len(nums)):
+        for i in range(len(nums)): # almost backtracking kind
             while arr[i][2]!=i:
                 j=arr[i][2]
                 arr[i], arr[j] = arr[j], arr[i]
